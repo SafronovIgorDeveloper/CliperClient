@@ -40,5 +40,5 @@ jobs:
         run: mvn clean verify
 
       # Шаг 5. Проверка Checkstyle
-      - name: Run Checkstyle (Google Style)
+      - name: Run Checkstyle
         run: mvn checkstyle:check
