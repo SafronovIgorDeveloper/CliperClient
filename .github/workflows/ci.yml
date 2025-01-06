@@ -1,4 +1,4 @@
-name: CI Build and Test
+name: CI Build, Test and Lint
 
 on:
   pull_request:
@@ -15,14 +15,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Шаг 1. Клонирование репозитория
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Шаг 2. Настройка JDK
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: '21'
           distribution: 'oracle'
 
+      # Шаг 3. Кэширование зависимостей Maven
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # Шаг 4. Сборка и тесты
       - name: Build and run tests with Maven
         run: mvn clean verify
+
+      # Шаг 5. Проверка Checkstyle
+      - name: Run Checkstyle
+        run: mvn checkstyle:check
