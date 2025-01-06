@@ -13,33 +13,27 @@
     <!-- Проверка на ограничение длины строки -->
     <module name="LineLength">
         <property name="max" value="120"/> <!-- Максимальная длина строки -->
-        <property name="fileExtensions" value="java"/>
     </module>
 
     <module name="TreeWalker">
-        <!-- **Блок проверок JavaDoc** -->
         <!-- Проверка на отсутствие JavaDoc для методов -->
         <module name="MissingJavadocMethod"/>
 
-        <!-- Проверка JavaDoc на классы -->
-        <!-- <module name="JavadocType"/>-->
-
-        <!-- **Блок проверок стиля именования** -->
+        <!-- Проверка правильности имен в стиле camelCase -->
         <module name="MethodName"/>
         <module name="ParameterName"/>
 
-        <!-- **Проверки на импорт** -->
+        <!-- Проверки для импорта -->
         <module name="UnusedImports"/>
         <module name="AvoidStarImport"/>
+        <module name="RedundantImport"/>
 
-        <!-- **Проверки для фигурных скобок (ключ правил оформления блоков кода)** -->
+        <!-- Проверки расположения фигурных скобок -->
         <module name="LeftCurly"/>
         <module name="RightCurly"/>
         <module name="NeedBraces"/>
 
-        <!-- **Проверки структуры и архитектуры** -->
-        <module name="FinalParameters"/>
-        <module name="HideUtilityClassConstructor"/>
-
+        <!-- Запрещает неиспользуемые переменные -->
+        <module name="UnusedVariable"/>
     </module>
 </module>
