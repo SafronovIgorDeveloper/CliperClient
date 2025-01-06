@@ -4,12 +4,30 @@
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+
     <property name="severity" value="error"/>
     <property name="fileExtensions" value="java"/>
 
     <!-- Проверка на ограничение длины строки -->
     <module name="LineLength">
         <property name="max" value="120"/>
+    </module>
+
+    <module name="TreeWalker">
+        <!-- Проверка расположения открывающих фигурных скобок -->
+        <module name="LeftCurly">
+            <!-- Скобки должны быть на той же строке -->
+            <property name="option" value="eol"/> <!-- end-of-line -->
+            <property name="ignoreEnums" value="true"/> <!-- Игнорировать перечисления (enum) -->
+        </module>
+
+        <!-- Проверка расположения закрывающих фигурных скобок -->
+        <module name="RightCurly">
+            <property name="option" value="alone"/> <!-- Скобка должна быть на отдельной строке -->
+        </module>
+
+        <!-- Проверка на обязательность фигурных скобок для всех блоков -->
+        <module name="NeedBraces"/>
     </module>
 
 </module>
