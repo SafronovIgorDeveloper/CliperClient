@@ -1,0 +1,166 @@
+/* Общие стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Основной контейнер заявки */
+.application-wrapper {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Заголовок "Заявка" */
+.application-title-container {
+    text-align: center;
+    width: 100%;
+}
+
+.application-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* Контейнер статуса */
+.status-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px; /* Отступ от других блоков сверху */
+    display: flex;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    gap: 15px; /* Отступы между элементами внутри контейнера */
+}
+
+/* Поле статуса */
+.status {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3b82f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0; /* Убрать внешний отступ */
+}
+
+/* Поле статуса во время загрузки */
+.status.loading {
+    transition: all 0.3s ease-in-out;
+}
+
+.status.loading::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+    margin-left: 10px;
+    animation: moveDots 2s infinite ease-in-out;
+}
+
+/* Анимация движения точки */
+@keyframes moveDots {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(25px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+}
+
+/* Поле статуса при ошибке */
+.status.error {
+    color: #e63946; /* Красный цвет текста */
+}
+
+/* Адаптивный дизайн для мобильных устройств */
+@media (max-width: 600px) {
+    .application-wrapper {
+        width: 90%;
+        gap: 15px;
+    }
+
+    .application-title {
+        font-size: 20px;
+    }
+
+    .status {
+        font-size: 16px;
+    }
+}
+
+/* Стили для заблокированных полей */
+form input:disabled,
+form select:disabled,
+form textarea:disabled {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    color: #888;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Стили для активных полей */
+form input:not(:disabled),
+form select:not(:disabled),
+form textarea:not(:disabled) {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #333;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Скрываем кнопку по умолчанию */
+.hidden {
+    display: none;
+}
+
+/* Основной стиль кнопки */
+#retryButton {
+    background-color: #4CAF50; /* Зелёный фон */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Внутренние отступы */
+    border: none; /* Убираем обводку */
+    border-radius: 10px; /* Скруглённые углы */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: bold; /* Полужирный текст */
+    cursor: pointer; /* Указатель в виде руки при наведении */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+/* Hover (Наведение на кнопку) */
+#retryButton:hover {
+    background-color: #45A049; /* Тёмно-зелёный при наведении */
+    transform: scale(1.05); /* Лёгкое увеличение */
+}
+
+/* Active (Нажатие на кнопку) */
+#retryButton:active {
+    background-color: #3E8E41; /* Ещё более тёмный зелёный при нажатии */
+    transform: scale(0.95); /* Лёгкое уменьшение */
+}
