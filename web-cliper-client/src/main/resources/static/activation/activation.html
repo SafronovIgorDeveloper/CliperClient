@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Активация</title>
+    <link href="../header/styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div id="header-container"></div>
+
+<!-- Основной блок приложения -->
+<div class="application-wrapper">
+    <!-- Блок заголовка "Заявка" -->
+    <div class="application-title-container">
+        <p class="application-title">Заявка</p>
+    </div>
+
+    <div id="applicationFormContainer"></div>
+
+    <!-- Блок проверки статуса -->
+    <div class="status-container">
+        <p class="status" id="applicationStatus">Получение статуса</p>
+        <button class="hidden" id="retryButton">Повторить получение</button>
+    </div>
+</div>
+
+<script defer src="/header/header.js"></script>
+<script src="activation.js"></script>
+</body>
+</html>
