@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         applicationStatus?.classList.add("loading"); // Добавляем анимацию загрузки
         toggleForm(true); // Блокируем поля формы перед запросом статуса
 
-        fetch("http://localhost:3000/status")
+        fetch("http://localhost:8080/requisition/check")
             .then((response) => {
                 if (!response.ok) throw new Error("Ошибка связи с сервером");
                 return response.json();
