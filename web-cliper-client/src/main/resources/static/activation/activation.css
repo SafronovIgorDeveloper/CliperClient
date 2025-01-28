@@ -2,24 +2,29 @@
 .application-wrapper {
     max-width: 600px;
     margin: 20px auto;
-    padding: 15px;
+    padding: 10px; /* Уменьшаем размер внешнего отступа */
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 2px; /* Минимальное расстояние между всеми элементами внутри */
 }
 
 /* Заголовок "Заявка" */
 .application-title-container {
+    display: flex; /* Делаем контейнер флексбоксом */
+    justify-content: center; /* Центрируем текст по горизонтали */
+    align-items: center; /* Центрируем текст по вертикали */
     text-align: center;
-    width: 100%;
+    margin-bottom: 0; /* Удаляем нижний отступ */
+    padding: 0; /* Убираем внутренние отступы */
+    margin-top: 20px; /* Увеличиваем отступ сверху */
 }
 
 .application-title {
-    font-size: 24px;
+    font-size: 20px; /* Опционально немного уменьшим размер текста */
     font-weight: bold;
     color: #333;
     margin: 0;
@@ -29,15 +34,16 @@
 .status-container {
     text-align: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0; /* Убираем верхний отступ */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px; /* Уменьшение расстояния между статусом и кнопкой */
+    padding: 0; /* Убираем внутренние отступы */
 }
 
-/* Статус */
+/* Текст статуса */
 .status {
-    font-size: 18px;
+    font-size: 16px; /* Уменьшаем размер текста */
     font-weight: bold;
     color: #3b82f6;
     display: flex;
@@ -46,7 +52,7 @@
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    padding: 10px;
+    padding: 5px; /* Уменьшаем внутренние отступы */
 }
 
 .status.loading {

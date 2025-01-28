@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Динамически подключаем CSS для хедера
         const link = document.createElement('link');
         link.rel = 'stylesheet';
-        link.href = '/header/header-requisition.css';
+        link.href = '/header/header.css';
         document.head.appendChild(link);
     } catch (error) {
         console.error('Ошибка загрузки хедера:', error);
