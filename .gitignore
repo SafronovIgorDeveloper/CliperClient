@@ -1,25 +1,39 @@
-# Компилированные файлы класса / Compiled class files
+# Java файловая система
+
+# Компилированные файлы класса
 *.class
 
-# Лог-файлы выполнения / Runtime logs
+# Файлы журнала
 *.log
 *.out
 *.err
 
-# Папки и файлы конфигурации IDE (например, IntelliJ IDEA, Eclipse, VS Code) / IDE directories and config files (e.g., IntelliJ IDEA, Eclipse, VS Code)
-.idea/
+# Папки и файлы конфигурации IDE
+
+# IntelliJ IDEA
 *.iml
-*.iws
+.idea/
+
+# Eclipse
+.project
+.classpath
+.csettings/
+.settings/
+*.launch
+
+# VS Code
 .vscode/
+
+# Sublime Text
 *.sublime-workspace
 *.sublime-project
 
-# Сборочные артефакты / Build artifacts
+# Сборочные артефакты
 /target/
 /build/
 /bin/
 
-# Файлы Maven / Maven files
+# Maven
 .mvn/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -27,52 +41,65 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 
-# Файлы Gradле / Gradle files
+# Gradle
 .gradle/
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
-# Кэш Gradle / Gradle cache
-**/build
+# Gradle cache
 .gradle/
-build/
+**/build
 
-# Конфигурационные файлы Gradle / Gradle configuration files
-gradle-app.setting
-
-# Логи и временные файлы конфигурации / Logs and temporary config files
+# Логи и временные файлы конфигурации
 *.log
 *.log.*
 
-# Секреты и ключи / Secrets and keys
+# Секреты и ключи
 *.pem
 *.crt
 *.key
 *.secret
 .env
 
-# Результаты тестов (например, JUnit, Mockito) / Test results (e.g., JUnit, Mockito)
-*.test
-*.result
-*.results
+# Результаты тестов
+/test-results/
 
-# Локальные файлы зависимости IDE / Local IDE dependency files
-*.DS_Store
-*.buildpath
-*.project
+# Локальные файлы зависимости
+.classpath
+.project
 .workspace
+.settings/
 
-# Персональные конфигурационные файлы IDE / Personal IDE config files
+# Персональные конфигурационные файлы IDE
 *.ipr
 *.iws
-*.swp
-*.bak
 
-# Системные файлы операционной системы / Operating system files
+# Системные файлы операционной системы
 Thumbs.db
 .DS_Store
 ._*
 
-# Временные файлы Java / Java-specific temporary files
+# Временные файлы
+*.tmp
+*.swp
+*.bak
+*.old
+
+# Java-specific
 hs_err_pid*
-.classpath
+
+# Артефакты компиляции
+*.jar
+*.war
+*.ear
+
+# Кэш или временные файлы
+*.cache
+*.lock
+*.metadata/
+*.tmp
+*.recommenders
+
+# Другие временные файлы и дебаг
+*.bak
+*.daemon

@@ -1,0 +1,61 @@
+.application-container {
+    max-width: 800px; /* Увеличиваем ширину формы */
+    width: 100%; /* Адаптивная ширина */
+    padding: 30px; /* Внутренний отступ */
+    background-color: #ffffff; /* Белый фон */
+    border: 2px solid #3b82f6; /* Синяя обводка */
+    border-radius: 15px; /* Скругленные углы */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Эффект тени */
+    transition: box-shadow 0.2s ease; /* Только анимация тени (без трансформации) */
+}
+
+.application-container:hover {
+    transform: none; /* Убираем увеличение */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Оставляем стандартную тень */
+}
+
+.submit-button {
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 16px; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    color: white; /* Цвет текста */
+    background-color: #3b82f6; /* Синий фон */
+    border: none; /* Убираем границу */
+    border-radius: 8px; /* Закругленные углы */
+    cursor: pointer; /* Указатель мыши при наведении */
+    transition: transform 0.2s ease; /* Анимация трансформации кнопки */
+    margin-top: 20px; /* Отступ сверху */
+    align-self: center; /* Центрирование кнопки в контейнере */
+}
+
+.submit-button:hover {
+    background-color: #2563eb; /* Более темный синий при наведении */
+    transform: scale(1.05); /* Легкое увеличение */
+}
+
+.submit-button:active {
+    background-color: #1749b3; /* Ещё более темный синий при нажатии */
+    transform: scale(0.95); /* Лёгкое уменьшение */
+}
+
+.submit-button:disabled {
+    background-color: #ddd; /* Серый фон для отключённой кнопки */
+    color: #aaa; /* Серый текст */
+    cursor: not-allowed; /* Запретная иконка мыши */
+}
+
+.required {
+    color: red; /* Красная звездочка */
+    font-weight: bold; /* Выделяем жирным */
+    margin-left: 4px; /* Небольшой отступ слева */
+}
+
+#applicationFormWrapper {
+    display: flex; /* Флекс-контейнер */
+    justify-content: center; /* Центрируем форму по горизонтали */
+    align-items: flex-start; /* Притягиваем форму к верхнему краю контейнера */
+    padding-top: 20px; /* Отступ от хедера */
+    min-height: calc(100vh - 60px); /* Высота страницы с учётом высоты хедера, если он 60px */
+    margin: 0; /* Убираем лишние внешние отступы */
+    background-color: #f5f5f5; /* Серый фон страницы */
+}

@@ -10,4 +10,9 @@ public class PageController {
     public String getHomePage() {
         return "forward:index.html";
     }
+
+    @GetMapping("/requisition")
+    public String getRequisitionPage() {
+        return "forward:requisition/requisition.html";
+    }
 }

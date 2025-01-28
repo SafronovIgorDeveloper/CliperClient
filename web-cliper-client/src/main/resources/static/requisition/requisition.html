@@ -1,20 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Cliper</title>
+    <link href="../style.css" rel="stylesheet">
+    <link href="../header/header.css" rel="stylesheet">
+    <link href="../requisition/requisition.css" rel="stylesheet">
+</head>
+<body>
+<div id="header-container"></div>
 <div class="application-form" id="applicationFormWrapper">
     <div class="application-container">
         <form id="applicationForm">
-            <!-- Поле для ввода Наименования организации -->
-            <label for="organizationName">Наименование организации</label>
+            <label for="organizationName">Наименование организации <span class="required">*</span></label>
             <input id="organizationName" placeholder="Введите наименование..." required type="text">
 
-            <!-- Поле для ввода ИНН -->
-            <label for="inn">ИНН</label>
+            <label for="inn">ИНН <span class="required">*</span></label>
             <input id="inn" placeholder="Введите ИНН..." required type="text">
 
-            <!-- Поле для ввода КПП -->
-            <label for="kpp">КПП</label>
+            <label for="kpp">КПП <span class="required">*</span></label>
             <input id="kpp" placeholder="Введите КПП..." required type="text">
 
-            <!-- Выпадающий список выбора страны -->
-            <label for="country">Выберите страну</label>
+            <label for="country">Выберите страну <span class="required">*</span></label>
             <select id="country" required>
                 <option value="">-- Выберите страну --</option>
                 <option value="Россия">Россия</option>
@@ -23,6 +31,11 @@
                 <option value="Украина">Украина</option>
                 <option value="Грузия">Грузия</option>
             </select>
+
+            <button class="submit-button" type="submit">Отправить</button>
         </form>
     </div>
 </div>
+<script defer src="/header/header.js"></script>
+</body>
+</html>
