@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Активация</title>
-    <link href="../header/styles.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <link href="../header/header.css" rel="stylesheet">
+    <link href="activation.css" rel="stylesheet">
 </head>
 <body>
 <div id="header-container"></div>
 
-<!-- Основной блок приложения -->
 <div class="application-wrapper">
-    <!-- Блок заголовка "Заявка" -->
+
+<!-- Заголовок -->
     <div class="application-title-container">
-        <p class="application-title">Заявка</p>
+        <p class="application-title">Проверка статуса заявки</p>
     </div>
 
-    <div id="applicationFormContainer"></div>
-
-    <!-- Блок проверки статуса -->
+    <!-- Блок статуса -->
     <div class="status-container">
-        <p class="status" id="applicationStatus">Получение статуса</p>
-        <button class="hidden" id="retryButton">Повторить получение</button>
+        <p class="status" id="applicationStatus">Проверяем статус...</p>
+        <button class="hidden" id="retryButton">Повторить попытку</button>
     </div>
-</div>
 
+</div>
 <script defer src="/header/header.js"></script>
 <script src="activation.js"></script>
 </body>
