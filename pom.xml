@@ -24,6 +24,16 @@
         <checkstyle.config.location>config/checkstyle/checkstyle.xml</checkstyle.config.location>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>4.1.3</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>com.puppycrawl.tools</groupId>
