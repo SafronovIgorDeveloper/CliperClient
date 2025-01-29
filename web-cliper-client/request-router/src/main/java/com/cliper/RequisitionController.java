@@ -1,4 +1,4 @@
-package com.cliper.controller;
+package com.cliper;
 
 import com.cliper.client.SomeClientServer;
 import com.cliper.dto.StatusRequisition;
@@ -19,6 +19,7 @@ public class RequisitionController {
 
     @GetMapping("/status")
     public StatusRequisition getRequisitionStatus() {
-        return clientServer.fetchRequisitionStatus();
+        return StatusRequisition.NO_APPLICATION;
+//        return clientServer.fetchRequisitionStatus();
     }
 }

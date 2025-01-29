@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: cliper-client
+  spring:
+    datasource:
+      url: jdbc:h2:~/cliper-client-db
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: false
+    h2:
+      console:
+        enabled: false
+
+logging:
+  level:
+    root: warn
+    org.springframework: error
