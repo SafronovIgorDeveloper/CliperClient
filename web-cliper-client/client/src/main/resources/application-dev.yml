@@ -4,24 +4,27 @@ server:
 spring:
   application:
     name: cliper-client
-  spring:
-    datasource:
-      url: jdbc:h2:mem:testDB
-      driver-class-name: org.h2.Driver
-      username: sa
-      password:
-      schema: classpath:dev-schema.sql
-      data: classpath:dev-data.sql
-    jpa:
-      hibernate:
-        ddl-auto: update
-      show-sql: true
-    h2:
-      console:
-        enabled: true
-        path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:testDB
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      data-locations: classpath:dev-data.sql
+      schema-locations: classpath:dev-schema.sql
 
 logging:
   level:
     root: info
-    com.cliper: info
+    org.hibernate.SQL: debug
+    com.cliper: debug

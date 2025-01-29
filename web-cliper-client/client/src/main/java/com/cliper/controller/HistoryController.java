@@ -1,31 +1,26 @@
 package com.cliper.controller;
 
+import com.cliper.model.HistoryRecord;
+import com.cliper.repository.HistoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
 @RequestMapping("/history")
 public class HistoryController {
+    private final HistoryRepository historyRepository;
+
+    @Autowired
+    public HistoryController(HistoryRepository historyRepository) {
+        this.historyRepository = historyRepository;
+    }
 
     @GetMapping
-    public List<String> getHistory() {
-        return Arrays.asList(
-                "Событие 1: Пользователь вошёл в систему",
-                "Событие 2: Пользователь обновил профиль",
-                "Событие 3: Пользователь обновил профиль",
-                "Событие 4: Пользователь обновил профиль",
-                "Событие 5: Пользователь обновил профиль",
-                "Событие 6: Пользователь обновил профиль",
-                "Событие 7: Пользователь обновил профиль",
-                "Событие 8: Пользователь обновил профиль",
-                "Событие 9: Пользователь обновил профиль",
-                "Событие 10: Пользователь обновил профиль",
-                "Событие 11: Пользователь обновил профиль",
-                "Событие 12: Создана новая задача"
-        );
+    public List<HistoryRecord> getHistory() {
+        return historyRepository.findAll();
     }
 }
