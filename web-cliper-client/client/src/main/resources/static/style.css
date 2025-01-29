@@ -1,4 +1,4 @@
-/* Общие стили для страницы */
+/* === Общие стили для страницы === */
 body, html {
     margin: 0;
     padding: 0;
@@ -9,14 +9,14 @@ body, html {
     line-height: 1.5;
 }
 
-/* Контейнер страницы */
+/* === Контейнер страницы === */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Универсальный заголовок */
+/* === Универсальный заголовок === */
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin: 10px 0;
@@ -36,7 +36,7 @@ h3 {
     font-size: 20px;
 }
 
-/* Универсальный стиль ссылок */
+/* === Универсальный стиль ссылок === */
 a {
     color: #3b82f6;
     text-decoration: none;
@@ -47,7 +47,7 @@ a:hover {
     color: #2563eb;
 }
 
-/* Стили для кнопок */
+/* === Стили для кнопок === */
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -77,7 +77,7 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* Основные стили формы */
+/* === Основные стили формы === */
 form {
     width: 100%;
     max-width: 600px;
@@ -123,7 +123,7 @@ form textarea:disabled {
     cursor: not-allowed;
 }
 
-/* Ошибки и уведомления */
+/* === Ошибки и уведомления === */
 .error-message {
     color: #e63946;
     font-size: 12px;
@@ -135,7 +135,7 @@ form textarea:disabled {
     font-size: 12px;
 }
 
-/* Общий адаптивный контейнер */
+/* === Общий адаптивный контейнер === */
 .wrapper {
     max-width: 800px;
     margin: 20px auto;
@@ -145,7 +145,182 @@ form textarea:disabled {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Адаптивность */
+/* === Блоки логирования и истории с белой обводкой === */
+.history-block, .logs-block {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff; /* Белый фон у блока */
+    border: 1px solid #e0e0e0; /* Легкая обводка серого цвета */
+    border-radius: 12px; /* Скругление углов */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* === Таблицы === */
+.history-table, .logs-table, .data-table {
+    width: 100%;
+    border-collapse: collapse; /* Убираем зазоры между ячейками */
+    border-spacing: 0; /* Убираем лишние отступы */
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+/* Заголовки таблицы */
+.history-table thead th,
+.logs-table thead th,
+.data-table thead th {
+    background: linear-gradient(90deg, #4f46e5, #0ea5e9);
+    color: white;
+    text-align: left;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Строки таблицы: чередование */
+.history-table tbody tr:nth-child(odd),
+.logs-table tbody tr:nth-child(odd),
+.data-table tbody tr:nth-child(odd) {
+    background: #f9fafb;
+}
+
+.history-table tbody tr:nth-child(even),
+.logs-table tbody tr:nth-child(even),
+.data-table tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+
+/* Стили для ячеек */
+.history-table tbody td,
+.logs-table tbody td,
+.data-table tbody td {
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    border-right: 1px solid #e0e0e0; /* Разделение ячеек */
+}
+
+/* Убираем последнюю правую границу */
+.history-table tbody td:last-child,
+.logs-table tbody td:last-child,
+.data-table tbody td:last-child {
+    border-right: none;
+}
+
+/* Ограничение и прокрутка для таблицы истории: 10 строк */
+.history-table tbody {
+    max-height: calc(10 * 40px); /* Ограничение: 10 строк */
+    overflow-y: auto; /* Прокрутка для длинных списков */
+    display: block; /* Для работы overflow */
+}
+
+.history-table thead, .history-table tbody tr {
+    display: table; /* Для сохранения структуры таблицы */
+    width: 100%; /* Фиксируем ширину */
+    table-layout: fixed;
+}
+
+/* Прокрутка: Стилизация скроллбара */
+.history-table tbody::-webkit-scrollbar {
+    width: 8px;
+}
+
+.history-table tbody::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.history-table tbody::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.history-table tbody::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
+
+/* Прокрутка для Firefox */
+.history-table tbody {
+    scrollbar-width: thin;
+    scrollbar-color: #3b82f6 #f0f0f0;
+}
+
+/* === Обновленный стиль для блоков истории, статистики и логов (без прыжков) === */
+.block.statistics, .block.history, .block.logs {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #ffffff; /* Белый фон */
+    border-radius: 20px; /* Скругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: box-shadow 0.3s ease; /* Убираем transform */
+}
+
+/* Эффект при наведении */
+.block.statistics:hover, .block.history:hover, .block.logs:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Увеличиваем тень */
+}
+
+
+/* Стили для заголовков блоков */
+.block h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Стили таблиц в блоках истории и логов */
+.history-table, .logs-table {
+    width: 100%;
+    border-collapse: collapse; /* Убираем зазоры между ячейками */
+    border-spacing: 0; /* Убираем лишние отступы */
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Заголовки таблиц */
+.history-table thead th, .logs-table thead th {
+    background: linear-gradient(90deg, #4f46e5, #0ea5e9); /* Градиентный фон */
+    color: white;
+    text-align: left;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Ячейки таблиц */
+.history-table tbody td, .logs-table tbody td {
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Последняя строка таблиц без границы */
+.history-table tbody tr:last-child td, .logs-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Чередование цветов строк в таблицах */
+.history-table tbody tr:nth-child(odd), .logs-table tbody tr:nth-child(odd) {
+    background: #f9fafb;
+}
+
+.history-table tbody tr:nth-child(even), .logs-table tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+
+/* === Адаптивность === */
 @media (max-width: 768px) {
     body {
         font-size: 14px;
@@ -169,4 +344,22 @@ form textarea:disabled {
     form textarea {
         font-size: 14px;
     }
+
+    .history-block, .logs-block {
+        padding: 10px; /* Уменьшаем отступы */
+    }
+
+    .block.statistics, .block.history, .block.logs {
+        padding: 15px;
+    }
+
+    .block h2 {
+        font-size: 20px;
+    }
+
+    .history-table tbody td, .logs-table tbody td {
+        font-size: 12px;
+        padding: 10px;
+    }
+
 }

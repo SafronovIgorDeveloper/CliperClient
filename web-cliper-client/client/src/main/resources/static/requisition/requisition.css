@@ -1,41 +1,43 @@
+/* === Обновленный стиль для формы (без прыжков) === */
 .application-container {
     max-width: 800px; /* Увеличиваем ширину формы */
-    width: 100%; /* Адаптивная ширина */
+    width: 100%;
     padding: 30px; /* Внутренний отступ */
     background-color: #ffffff; /* Белый фон */
-    border: 2px solid #3b82f6; /* Синяя обводка */
-    border-radius: 15px; /* Скругленные углы */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Эффект тени */
-    transition: box-shadow 0.2s ease; /* Только анимация тени (без трансформации) */
+    border-radius: 20px; /* Скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    transition: box-shadow 0.3s ease; /* Убираем transform, оставляем только box-shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Эффект при наведении */
 .application-container:hover {
-    transform: none; /* Убираем увеличение */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Оставляем стандартную тень */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Увеличиваем тень */
 }
 
+/* Кнопка отправки */
 .submit-button {
-    padding: 10px 20px; /* Отступы внутри кнопки */
-    font-size: 16px; /* Размер текста */
-    font-weight: bold; /* Жирный текст */
-    color: white; /* Цвет текста */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
     background-color: #3b82f6; /* Синий фон */
-    border: none; /* Убираем границу */
-    border-radius: 8px; /* Закругленные углы */
-    cursor: pointer; /* Указатель мыши при наведении */
-    transition: transform 0.2s ease; /* Анимация трансформации кнопки */
-    margin-top: 20px; /* Отступ сверху */
-    align-self: center; /* Центрирование кнопки в контейнере */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Убираем transform */
+    margin-top: 20px;
+    align-self: center; /* Центрируем кнопку */
 }
 
 .submit-button:hover {
-    background-color: #2563eb; /* Более темный синий при наведении */
-    transform: scale(1.05); /* Легкое увеличение */
+    background-color: #2563eb; /* Темный синий при наведении */
 }
 
 .submit-button:active {
     background-color: #1749b3; /* Ещё более темный синий при нажатии */
-    transform: scale(0.95); /* Лёгкое уменьшение */
 }
 
 .submit-button:disabled {

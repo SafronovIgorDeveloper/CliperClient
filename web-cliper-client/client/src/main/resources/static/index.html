@@ -9,5 +9,51 @@
 <body>
 <div id="header-container"></div>
 <script defer src="/header/header.js"></script>
+<div class="container">
+    <div class="top-blocks">
+        <!-- Первый блок: Статистика -->
+        <div class="block statistics">
+            <h2>Статистика</h2>
+            <p>Здесь будет отображаться статистика.</p>
+        </div>
+
+        <!-- Второй блок: История -->
+        <div class="block history">
+            <h2>История</h2>
+            <table class="history-table">
+                <thead>
+                <tr>
+                    <th>Сообщение</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Здесь будет заполняться история -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Третий блок: Логи -->
+        <div class="block logs">
+            <h2>Логи</h2>
+            <table class="logs-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Сообщение</th>
+                    <th>Время</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Начало работы приложения.</td>
+                    <td>12:34:56</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script defer src="history.js"></script>
 </body>
 </html>
